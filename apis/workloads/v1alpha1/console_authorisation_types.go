@@ -6,6 +6,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
+// +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // ConsoleAuthorisationSpec defines the desired state of ConsoleAuthorisation
 type ConsoleAuthorisationSpec struct {
 	// The reference to the console by name that this console authorisation belongs to.
@@ -21,6 +23,8 @@ type ConsoleAuthorisationStatus struct{}
 // +kubebuilder:object:root=true
 // +kubebuilder:storageversion
 
+// +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // ConsoleAuthorisation is the Schema for the consoleauthorisations API
 type ConsoleAuthorisation struct {
 	metav1.TypeMeta   `json:",inline"`
